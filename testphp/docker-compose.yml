@@ -1,0 +1,20 @@
+services:
+  nginx:
+    image: 'bitnami/nginx:latest'
+    depends_on:
+      - phpfpm
+    #networks:
+    #  - app-tier
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./conf/server_block.conf:/opt/bitnami/nginx/conf/server_blocks/app.conf
+      - ./app:/var/www/html
+  services:
+    phpfpm:
+      image: 'bitnami/php-fpm:latest'
+      # networks:
+      #   - app-tier
+      volumes:
+        - ./app:/var/www/html
