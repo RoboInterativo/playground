@@ -27,6 +27,8 @@ services:
       - ./app:/var/www/html
 
   phpfpm:
+    links:
+      - "mysql"
     container_name: phpfpm
     image: 'bitnami/php-fpm:latest'
     # networks:
