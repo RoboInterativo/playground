@@ -6,7 +6,7 @@ services:
     container_name: mysql
     image: 'bitnami/mysql:latest'
     environment:
-      - MYSQL_MASTER_ROOT_PASSWORD=exb021205
+      - MYSQL_ROOT_PASSWORD=exb021205
       - MYSQL_USER=appuser
       - MYSQL_PASSWORD=appuser
       - MYSQL_DATABASE=app
