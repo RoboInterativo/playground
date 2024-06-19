@@ -9,7 +9,7 @@ services:
       - '80:80'
       - '443:443'
     volumes:
-      - ./conf/server_block.conf:/opt/bitnami/nginx/conf/server_blocks/app.conf
+      - ./conf/app.conf:/opt/bitnami/nginx/conf/server_blocks/app.conf
       - ./app:/var/www/html
 
   phpfpm:
